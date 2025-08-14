@@ -1,6 +1,7 @@
 body, html {
   height: 100%;
   margin: 0;
+  
 }
 
 .bg {
@@ -9,4 +10,15 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+
+.box {
+  height: 7%;
+  width: 100%;
+  border: 3px solid rgb(134, 131, 131);
+  background-color: rgb(223, 217, 217);
+  margin: 2px;
+  margin-bottom: 0;
 }
