@@ -4,38 +4,108 @@ body, html {
   
 }
 
-.bg {
-  background-image: url("../lawn.jpg");
-  height: 85%;
-  
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size:cover;
-  filter: blur(3px);
-  border: 10px inset green;
+.page {
+  background-color:antiquewhite;
+  height: 30rem;
+  font-size: 3rem;
+  margin: 20px;
+  overflow: auto;
+  text-align: center;
+  border: 10px inset black;
+  border-radius: 4rem 4rem 4rem 4rem;
+  padding: 10px;
+
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  font-weight: bolder;
+  text-shadow: 1px 1px 3px rgb(48, 99, 42);
   
 }
 
-.container {
-  overflow:hidden;
+.wrapper {
+  display: flex;
+  flex-direction: row;
   position: relative;
 }
 
+.page1, .page2 {
+  position:absolute;
+width: 10em;
+height: 3em;
+}
+
+
+ .page2 {
+  left: 13em;
+ }
+
+.bg {
+  position: fixed; /* Fixes the background to the viewport */ 
+    left: 0;
+    right: 0;
+    bottom: 0;
+  top: 7em;
+  border: 8px ridge green;
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.bg::before {
+  content: '';
+  position: absolute;
+  top: 0em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../lawn.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  
+  filter: blur(0px);
+  z-index: -1;
+}
+
+.container {
+  height: 120px;
+  z-index: 2;
+  display: flex;
+  
+ 
+}
+
 .box {
-  height: 9%;
-  width: 99%;
-  border: 10px outset rgb(54, 141, 54);
+  width: 100%;
+  border: 8px ridge green;
   background-color: rgb(223, 217, 217);
-  margin: 2px;
-  margin-bottom: 0;
-  margin-top: 1px;
+  position: relative;
 }
 
 
   
  .action-button {
-  border: solid black;
+  border: inset rgb(0, 0, 0);
   border-radius:10px 10px 10px 10px;
   font-size: 100%;
-  
+  font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
  } 
+
+ @media (max-width: 1000px) {
+  .page {
+    font-size: 2.0rem;
+  }
+ }
+
+ @media (min-height: 1000px) {
+  .container {
+    height: 145px;
+    
+    
+  }
+  .page {
+    height: 30rem;
+    font-size: 2.8rem;
+  }
+ }
